@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ulatraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default/layout}">
+<head>
+    <link rel="stylesheet" th:href="@{/default/css/styles.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>Candle Detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        .candle-detail-container {
+            padding: 50px 0;
+        }
+        .candle-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .candle-info {
+            padding: 20px;
+        }
+        .candle-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .candle-price {
+            font-size: 1.8rem;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        .candle-quantity {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .candle-description {
+            font-size: 1.2rem;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        .candle-content {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .back-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div layout:fragment="content">
+<main class="candle-detail-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img th:src="@{${candle.imageURL}}" class="candle-image" alt="Candle Image">
+            </div>
+            <div class="col-md-6 candle-info">
+                <h1 class="candle-title" th:text="${candle.nameCandle}"></h1>
+                <p class="candle-price">
+                    <i class="fas fa-tag"></i>
+                    <span th:text="${'$' + candle.price}"></span>
+                </p>
+                <p class="candle-quantity">
+                    <i class="fas fa-box"></i>
+                    <span th:text="${'Quantity: ' + candle.quantity}"></span>
+                </p>
+                <div class="candle-description">
+                    <h4>Description:</h4>
+                    <p th:text="${candle.description}"></p>
+                </div>
+                <div class="candle-content">
+                    <h4>Details:</h4>
+                    <p th:text="${candle.content}"></p>
+                </div>
+                <div class="mt-4">
+                    <a th:href="@{/order}" class="btn btn-primary back-button">
+                        <i class="fas fa-arrow-left"></i> Back to Candles
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

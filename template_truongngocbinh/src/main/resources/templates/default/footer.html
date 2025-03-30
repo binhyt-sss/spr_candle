@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/default/css/styles.css}">
+</head>
+<body>
+<!-- Footer fragment -->
+<footer th:fragment="footer">
+    <!-- Shipping Banner -->
+    <div class="shipping-banner">
+        SHIPMENTS TO ALL THE COUNTRY. MINIMUM PURCHASE OF $30
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-tao">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img th:src="@{/default/images/Logo.png}" alt="Royal Candle Logo">
+                    <div class="footer-brand">ROYAL CANDLE</div>
+                </div>
+
+                <nav class="footer-nav">
+                    <a th:href="@{/order}" >CANDLES</a>
+                    <a th:href="@{/order}" >GIFTS</a>
+                    <a th:href="@{/ship}" >SHIPMENTS</a>
+                    <a th:href="@{/ship}" >PROMOTIONS</a>
+                    <a th:href="@{/cus}" >GALLERY</a>
+                    <a th:href="@{/contact}" >CONTACT US</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<!-- Header fragment -->
+<header th:fragment="header">
+    <nav class="custom-navbar">
+        <a th:href="@{/candles-home}" class="navbar-brand">
+            <img th:src="@{/default/images/Logo.png}" alt="Logo">
+        </a>
+
+        <ul class="custom-navbar-nav">
+            <li><a th:href="@{/order}" class="nav-link">CANDLES</a></li>
+            <li><a th:href="@{/order}" class="nav-link">GIFTS</a></li>
+            <li><a th:href="@{/ship}" class="nav-link">SHIPMENTS</a></li>
+            <li><a th:href="@{/ship}" class="nav-link">PROMOTIONS</a></li>
+            <li><a th:href="@{/cus}" class="nav-link">GALLERY</a></li>
+            <li><a th:href="@{/contact}" class="nav-link">CONTACT US</a></li>
+            <li sec:authorize="hasRole('ADMIN')">
+                <a th:href="@{/admin}" class="nav-link">ADMIN</a>
+            </li>
+            <li sec:authorize="hasRole('MANAGER')">
+                <a th:href="@{/manager}" class="nav-link">MANAGER</a>
+            </li>
+        </ul>
+
+        <div class="right-section">
+            <div class="social-icons">
+                <a href="https://facebook.com/royalcandle" target="_blank">
+                    <img th:src="@{/default/images/facebook.png}" alt="Facebook">
+                </a>
+                <a href="https://instagram.com/royalcandle" target="_blank">
+                    <img th:src="@{/default/images/instagram.png}" alt="Instagram">
+                </a>
+                <a href="https://twitter.com/royalcandle" target="_blank">
+                    <img th:src="@{/default/images/YouTube.png}" alt="Twitter">
+                </a>
+            </div>
+            <div class="login-section">
+                <span sec:authorize="isAnonymous()">
+                    <a th:href="@{/login}" class="login-btn">LOGIN</a>
+                    <a th:href="@{/register}" class="create-account">CREATE NEW ACCOUNT</a>
+                </span>
+                <span sec:authorize="isAuthenticated()">
+                    <span th:text="${#authentication.name}"></span>
+                    <a th:href="@{/logout}" class="login-btn">LOGOUT</a>
+                </span>
+            </div>
+        </div>
+    </nav>
+</header>
+</body>
+</html>

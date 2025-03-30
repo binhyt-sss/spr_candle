@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ulatraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title layout:title-pattern="$CONTENT_TITLE">American Food</title>
+    <!-- Liên kết tới file CSS -->
+    <link rel="stylesheet" th:href="@{/default/css/styles.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<!-- Header section will be inserted here -->
+<div th:replace="~{default/header :: header}"></div>
+
+<!-- Content section -->
+<div layout:fragment="content">
+    <!-- This will be replaced by the content of individual pages -->
+</div>
+
+<!-- Footer section will be inserted here -->
+<div th:replace="~{default/footer :: footer}"></div>
+</body>
+</html>

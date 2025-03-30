@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ulatraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default/layout}">  <!-- Vẫn sử dụng layout từ thư mục default -->
+<head>
+    <title>Contact Us</title>
+    <style>
+        .customer-list {
+            padding: 50px 0;
+        }
+        .customer-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .customer-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .customer-logo {
+            width: 100px;
+            margin-right: 20px;
+        }
+        .customer-info {
+            flex: 1;
+        }
+        .customer-info h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .customer-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<div layout:fragment="content">
+    <section class="contact-hero">
+        <div class="container">
+            <h1 class="contact-title">Liên Hệ Với Chúng Tôi</h1>
+            <p class="contact-subtitle">Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn</p>
+        </div>
+    </section>
+
+    <!-- Customer List Section -->
+    <section class="customer-list">
+        <div class="container">
+            <h2 class="text-center mb-4">Danh Sách Khách Hàng</h2>
+            <div class="row">
+                <div class="col-md-6" th:each="customer : ${customers}">
+                    <div class="customer-card">
+                        <img class="customer-logo" th:src="@{/default/images/logogdu-02-5690.png}" alt="Logo">
+                        <div class="customer-info">
+                            <h3 th:text="${customer.nameCompany}">Company Name</h3>
+                            <p><strong>Địa chỉ:</strong> <span th:text="${customer.streetAddress + ', ' + customer.city}">Street Address, City</span></p>
+                            <p><strong>Khu vực:</strong> <span th:text="${customer.region}">Region</span></p>
+                            <p><strong>Quốc gia:</strong> <span th:text="${customer.country}">Country</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

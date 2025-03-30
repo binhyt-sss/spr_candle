@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ulatraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default/layout}">
+<head>
+    <title>Candle Shop</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <!-- Hero Section -->
+    <div>
+    </div>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>
+                        CREATE AN AMBIANCE<br>
+                        IN EACH OF YOUR SPACES WITH<br>
+                        OUR HARMONIC PRODUCTS
+                    </h1>
+
+                    <div class="order-form">
+                        <h2>PLACE YOUR ORDER HERE</h2>
+                        <input type="text" class="form-input" placeholder="PRODUCT">
+                        <input type="number" class="form-input" placeholder="QUANTITY">
+                        <button class="continue-btn">CONTINUE</button>
+                    </div>
+
+                    <p class="info-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                        maecenas accumsan lacus vel facilisis.
+                    </p>
+
+                    <ul class="features-list">
+                        <li>Seasonal promotions</li>
+                        <li>Free shipping</li>
+                        <li>Gift items</li>
+                        <li>Membership</li>
+                    </ul>
+                </div>
+
+                <div class="hero-image">
+                    <img th:src="@{/default/images/Image1.png}" alt="Royal Candle">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Gift Section -->
+    <section class="gift-section">
+        <div class="container">
+            <div class="gift-content">
+                <div class="gift-image">
+                    <img th:src="@{/default/images/Box.png}" alt="Gift Box">
+                </div>
+                <div class="gift-text">
+                    <h2>MAKE A SPECIAL GIFT AND<br>SEND YOUR FAVORITE CANDLE</h2>
+                    <h3>AROMATIZE YOUR SPACES</h3>
+                    <div class="discount-text">30% DISCOUNT</div>
+                    <a th:href="@{/order}" class="buy-now-btn">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="product-section">
+        <div class="container">
+            <div class="product-content">
+                <div class="product-text">
+                    <div class="product-name">salted caramel</div>
+                    <div class="product-title">KIT OF 3 CANDLES</div>
+                    <div class="product-price">SPECIAL PRICE $40</div>
+                </div>
+                <div class="product-image">
+                    <img th:src="@{/default/images/Image2.png}" alt="Candle Kit">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pack Info Section -->
+    <section class="pack-section">
+        <div class="container">
+            <div class="pack-content">
+                <div class="pack-image">
+                    <img th:src="@{/default/images/Image3.png}" alt="Candle Pack">
+                </div>
+                <div class="pack-text">
+                    <h2 class="pack-title">
+                        EACH PACK OF 12 CANDLES<br>
+                        AND THEIR INDIVIDUAL CONTENT<br>
+                        IS 15 GRAMS
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Individual Box Section -->
+    <section class="box-section">
+        <div class="container">
+            <div class="box-content">
+                <div class="box-@{/default/images">
+                    <img th:src="@{/default/images/Image4.png}" alt="Royal Candle Box">
+                </div>
+                <div class="box-text">
+                    <h2 class="box-title">INDIVIDUAL BOX, PERFECT FOR<br>DECORATING SPACES</h2>
+                    <p class="box-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                        maecenas accumsan lacus vel facilisis.
+                    </p>
+                    <div class="new-badge">
+                        NEW<br>IMAGE
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2 class="newsletter-title">
+                        A WORLD OF WELLNESS<br>
+                        FOR YOUR HOME
+                    </h2>
+                    <h3 class="newsletter-subtitle">SUBSCRIBE TO OUR<br>NEWSLETTER:</h3>
+
+                    <form class="newsletter-form">
+                        <input type="text" class="newsletter-input" placeholder="NAME">
+                        <input type="email" class="newsletter-input" placeholder="EMAIL">
+                        <button type="submit" class="signup-btn">SIGN UP</button>
+                    </form>
+
+                    <p class="newsletter-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                        maecenas accumsan lacus vel facilisis.
+                    </p>
+
+                    <div class="newsletter-links">
+                        <a href="#" class="newsletter-link">New releases here</a>
+                        <a href="#" class="newsletter-link">Buy now</a>
+                    </div>
+                </div>
+
+                <div class="newsletter-image">
+                    <img th:src="@{/default/images/Image5.png}" alt="Royal Candle Product">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotion Section -->
+    <section class="promotion-section">
+        <div class="container">
+            <div class="promotion-title">salted caramel</div>
+            <h2 class="promotion-subtitle">
+                40% OFF ON PURCHASES OF 5 OR MORE PRODUCTS<br>
+                AND FREE SHIPPING OVER $70
+            </h2>
+            <div class="promotion-products">
+                <div class="promotion-product">
+                    <img th:src="@{/default/images/Image6.png}" alt="Royal Candle">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Aroma Section -->
+    <section class="aroma-section">
+        <div class="container">
+            <div class="aroma-content">
+                <div class="aroma-image">
+                    <img th:src="@{/default/images/Image7.png}" alt="Product Box" class="product-box">
+                </div>
+                <div class="aroma-text">
+                    <h2 class="aroma-heading">AWAKEN YOUR SENSES<br>WITH THE NEW AROMA</h2>
+                    <div class="aroma-name">cinnamon citrus</div>
+                    <p class="aroma-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                        ultrices gravida.
+                    </p>
+                    <a href="#" class="order-button">PLACE YOUR ORDER HERE</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

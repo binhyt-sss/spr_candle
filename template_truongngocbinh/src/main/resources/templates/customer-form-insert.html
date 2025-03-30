@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin/layoutDash}">
+<head>
+    <title>Add New Customer</title>
+    <link th:href="@{/admin/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet">
+    <link th:href="@{/admin/css/sb-admin-2.min.css}" rel="stylesheet">
+</head>
+<body>
+<section layout:fragment="main-content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Add New Customer</h1>
+        </div>
+
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Customer Information</h6>
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/customer/save}" method="post" th:object="${customer}">
+                            <!-- Add hidden field for ID, important for updates -->
+                            <input type="hidden" th:field="*{id}">
+                            
+                            <div class="form-group">
+                                <label for="nameCompany">Company Name</label>
+                                <input type="text" class="form-control" id="nameCompany" th:field="*{nameCompany}">
+                                <span th:if="${#fields.hasErrors('nameCompany')}" th:errors="*{nameCompany}" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="streetAddress">Street Address</label>
+                                <input type="text" class="form-control" id="streetAddress" th:field="*{streetAddress}">
+                                <span th:if="${#fields.hasErrors('streetAddress')}" th:errors="*{streetAddress}" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="city">City</label>
+                                    <input type="text" class="form-control" id="city" th:field="*{city}">
+                                    <span th:if="${#fields.hasErrors('city')}" th:errors="*{city}" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="region">Region</label>
+                                    <input type="text" class="form-control" id="region" th:field="*{region}">
+                                    <span th:if="${#fields.hasErrors('region')}" th:errors="*{region}" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="postal">Postal Code</label>
+                                    <input type="text" class="form-control" id="postal" th:field="*{postal}">
+                                    <span th:if="${#fields.hasErrors('postal')}" th:errors="*{postal}" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="country">Country</label>
+                                    <select class="form-control" id="country" th:field="*{country}">
+                                        <option value="">Select Country</option>
+                                        <option value="HaNoi">Ha Noi</option>
+                                        <option value="HCM">Ho Chi Minh</option>
+                                        <option value="CanTho">Can Tho</option>
+                                        <option value="DaNang">Da Nang</option>
+                                        <option value="HaiPhong">Hai Phong</option>
+                                    </select>
+                                    <span th:if="${#fields.hasErrors('country')}" th:errors="*{country}" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-save"></i>
+                                </span>
+                                <span class="text">Save Customer</span>
+                            </button>
+                            
+                            <a th:href="@{/customer/list-customer}" class="btn btn-secondary btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-arrow-left"></i>
+                                </span>
+                                <span class="text">Back to List</span>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+<!-- Bootstrap core JavaScript-->
+<script th:src="@{/admin/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{/admin/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+<!-- Core plugin JavaScript-->
+<script th:src="@{/admin/vendor/jquery-easing/jquery.easing.min.js}"></script>
+
+<!-- Custom scripts for all pages-->
+<script th:src="@{/admin/js/sb-admin-2.min.js}"></script>
+</body>
+</html>
